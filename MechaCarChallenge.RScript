@@ -21,5 +21,5 @@ grand_summarize_coil <- coil_table  %>% summarize(Mean_PSI=mean(PSI),Median_PSI=
 //Conduct T Test Using Log 10 to reduce power of outliers
 t.test(log10(coil_table$PSI),mu=log10(grand_summarize_coil$Mean_PSI)) 
 
-//Conduct T Test Using Log 10 to reduce power of outliers
+//Conduct T Test Without Using Log 10 to reduce power of outliers
 t.test(coil_table$PSI,mu=1500) 
