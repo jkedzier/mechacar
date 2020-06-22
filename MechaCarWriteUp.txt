@@ -1,0 +1,35 @@
+#Mecha Car Analysis
+
+I have conducted a number of statistical analyses to help up determine the strategic direction for MechaCar
+
+#Linear Regression
+I have conducted a multi-linear regression analysis that is used to predict MPG using a vehicle's weight, height, spoiler angle, clearance and whether it is 4 or 2 wheel drive.  Looking at the analysis, I see a strong correlation between these items.  Most significant to the analysis is the vehicle's length and grownd clearance.  The spoiler angle was least predictive.  
+
+Due to the high r value, there is a strong correlation and slope (not equal to 0) in this analysis. 
+
+#Suspension Coil Summary Statistics
+In analyzing suspension coil test results, I have created two summary statistical views.  One is a summary across all lots.  The second is by lot.
+
+Across all lots, the variance in results is 62.3, which would be within our specifications.  However, when I summarize by Lot, Lots 1 and 2 meet this specification, but Lot 3 fails to meet it, with a PSI variance of 170.  The practices in Lot 3 should be reviewed.  This lot also has a high degree of standard deviation, which means that that there are results that vary widely from the mean. 
+
+
+#T-Test Results
+
+I conducted a T-Test to see if there are statistical differences between the sample and the mean.  We are looking for one of the ofllowing
+
+H0 : There is no statistical difference between the observed sample mean and its presumed population mean.
+Ha : There is a statistical difference between the observed sample mean and its presumed population mean.
+
+Given the results above on Lot3, I used T Tests on both the actual amounts and Log10, to reduce the impact of outliers.  Both tests confirmed that we do not have sufficient evidence to reject that there is a statisitcal difference.
+
+
+#Study for Further Analysis
+Using our our data, I would like to conduct further analysis of competitors MPG Results, vehicle length, vehicle weight, and overall sales data to determine what customers are truly looking to buy.  First, are they in the market for bigger, heavier cars, or greater MPG.  From there, I would do a comparative analysis, and determine if the cars in our size and MPG categories match up.  I would use this data to determine if there is a car market we are missing, or if we need to invest in improving our car models to meet what the market is looking for.
+
+To do this analysis
+-Gather market sales data by Car Brand / Model.  Aim for this market data to include Make, Model, and Trim
+-Gather MPG Statistics and Car specificiation data around size and drive train
+-Clean the data set and generate a representative sample
+-Conduct a 2 Sample T Test to ensure that the data is statistically valid
+-Conduct a correlation analysis to see what is strongly related to sales in units or dollars
+-Conduct multi-linear regression testing to the relationship between sales data and the other car attibutes

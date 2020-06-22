@@ -1,0 +1,25 @@
+library(tidyverse)
+
+//Read CSV File for MPG Data
+read.csv(file='MechaCar_mpg.csv')
+mpg_table <- read.csv(file='MechaCar_mpg.csv')
+
+//Linear Regression Model
+lm(formula = mpg ~ AWD + vehicle.length + vehicle.weight + spoiler.angle + ground.clearance + AWD, data = mpg_table)
+
+//Build Summary Status
+summary(lm(formula = mpg ~ AWD + vehicle.length + vehicle.weight + spoiler.angle + ground.clearance, data = mpg_table))
+
+//Read Coil Table
+coil_table <- read.csv(file='Suspension_Coil.csv')
+
+//Create Summary Tables, One by Lot, One for Totals
+summarize_coil <- coil_table  %>% group_by(Manufacturing_Lot) %>% summarize(Mean_PSI=mean(PSI),Median_PSI=median(PSI),SD_PSI=sd(PSI),Var_PSI=var(PSI),Num_Vehicles=n()) 
+
+grand_summarize_coil <- coil_table  %>% summarize(Mean_PSI=mean(PSI),Median_PSI=median(PSI),SD_PSI=sd(PSI),Var_PSI=var(PSI),Num_Vehicles=n()) 
+
+//Conduct T Test Using Log 10 to reduce power of outliers
+t.test(log10(coil_table$PSI),mu=log10(grand_summarize_coil$Mean_PSI)) 
+
+//Conduct T Test Using Log 10 to reduce power of outliers
+t.test(coil_table$PSI,mu=1500) 
